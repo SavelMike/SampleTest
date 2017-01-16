@@ -21,8 +21,17 @@ public class DealGame {
     */
 
     public int bankOffer(int[] cases) {
-    }
+        int sum = 0;
+        int amountOfEl = 0;
+        for (int i = 0; i < cases.length; i++) {
+            sum += cases[i];
+            if (cases[i] != 0) {
+                amountOfEl ++;
+            }
 
+        }
+        return  sum / amountOfEl + 1;
+    }
 
 
 }
