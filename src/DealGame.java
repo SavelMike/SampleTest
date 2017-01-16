@@ -14,7 +14,7 @@ public class DealGame {
     }
 
     /*
-    *  bank_offer
+    *  bankOffer
     * arguments:  int [] cases
     * return value: offer
     * sum all elements and divide by number of non-zero elements + 1
