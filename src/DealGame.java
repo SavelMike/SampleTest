@@ -14,7 +14,7 @@ public class DealGame {
     }
 
     /*
-    * bank_offer
+    *  bank_offer
     * arguments:  int [] cases
     * return value: offer
     * sum all elements and divide by number of non-zero elements + 1
@@ -30,8 +30,6 @@ public class DealGame {
             }
 
         }
-        return  sum / amountOfEl + 1;
+        return  sum / (amountOfEl + 1);
     }
-
-
 }
