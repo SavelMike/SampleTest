@@ -4,7 +4,8 @@
 public class DealGame {
     public static void main(String[] args) {
         /*
-         * 1) Distribute the suitcases, fill suitcases
+         * 1) Distribute the suitcases, FillSuitcases method
+         *  FillSuitcases(arrayOfSuitcases, arrayOfMoney)
          * 2) User selects a case; variable own_case_index is set
          * 3) the game
          *  3.1 ask user to open a case he does not own, index of suitcase opened
