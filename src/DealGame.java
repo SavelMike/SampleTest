@@ -3,7 +3,17 @@
  */
 public class DealGame {
     public static void main(String[] args) {
-
+        /*
+         * 1) Distribute the suitcases
+         * 2) User selects a case; variable own_case_index is set
+         * 3) the game
+         *  3.1 ask user to open a case he does not own, index of suitcase opened
+         *  3.2 open selected case: assigned 0 to element
+         *  3.3 get bank offer, bankOffer method
+         *  3.4 temps user with the offer for his suitcase
+         *  3.5 if user accepted the offer  - the game is over. if not continue the for loop.
+         * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
+          */
     }
 
     /*
@@ -11,8 +21,7 @@ public class DealGame {
     * for example, [p] [2] [] [4]
     */
     public static void display_suitecases(int [] cases, int own_case_index) {
-        for (int i = 0; i < cases.length; i++)
-        {
+        for (int i = 0; i < cases.length; i++) {
             if (i != 0) {
                 System.out.println(" ");
             }
