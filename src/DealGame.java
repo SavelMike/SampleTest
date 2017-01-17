@@ -11,6 +11,23 @@ public class DealGame {
     * for example, [p] [2] [] [4]
     */
     public static void display_suitecases(int [] cases, int own_case_index) {
+        for (int i = 0; i < cases.length; i++)
+        {
+            if (i != 0) {
+                System.out.println(" ");
+            }
+            if (i + 1 == own_case_index) {
+                System.out.println("[p]");
+                continue;
+            }
+            if (cases[i] == 0) {
+                System.out.println("[]");
+                continue;
+            }
+
+            System.out.print("["+ i + 1 + "]");
+        }
+        System.out.println();
     }
 
     /*
