@@ -1,12 +1,29 @@
+import java.util.Scanner;
+
 /**
  * Created by Михаил on 16.01.2017.
  */
 public class DealGame {
     public static void main(String[] args) {
+
+        /* * 1) Distribute the suitcases, FillSuitcases method */
+        fillSuitcases(arrayOfSuitcases, arrayOfMoney);
+
+        /* 2) User selects a case; variable ownCaseIndex is set*/
+        while (true) {
+            int choice = 0;
+            System.out.print("Please select the suitcase that you would like to own (1-6): ");
+            Scanner sc = new Scanner(System.in);
+            choice = sc.nextInt();
+            if ((1 <= choice) && (choice < 6)) {
+                continue;
+            }
+            ownCaseIndex = choice;
+            break;
+        }
+
+
         /*
-         * 1) Distribute the suitcases, FillSuitcases method
-         *  FillSuitcases(arrayOfSuitcases, arrayOfMoney)
-         * 2) User selects a case; variable own_case_index is set
          * 3) the game
          *  3.1 ask user to open a case he does not own, index of suitcase opened
          *  3.2 open selected case: assigned 0 to element
@@ -70,7 +87,7 @@ public class DealGame {
      *
      * @param Array
      */
-    public static void FillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
+    public static void fillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
 
     }
 }
