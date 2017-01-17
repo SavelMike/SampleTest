@@ -55,15 +55,14 @@ public class DealGame {
                 Scanner sc = new Scanner(System.in);
                 String choice = sc.next();
                 if (choice.equals("y")) {
-                    System.out.print("You accepted the offer of " + offer + " euro. Your suitcase contained: " + arrayOfSuitcases[ownCaseIndex] +
-                    " euro.");
+                    System.out.print("You accepted the offer of " + offer + " euro. Your suitcase contained: " +
+                            arrayOfSuitcases[ownCaseIndex] + " euro.");
                     if (offer > arrayOfSuitcases[ownCaseIndex]) {
                         System.out.print(" Congratulations, you made the right choice!");
-                    }
-                    else {
+                    } else {
                         System.out.print("  Unfortunately, you could have done better.");
                     }
-
+                    System.exit(0);
                 }
             }
 
