@@ -35,7 +35,7 @@ public class DealGame {
                 Scanner scanner = new Scanner(System.in);
                 int suitcaseToOpen = scanner.nextInt();
                 if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) ||
-                        (arrayOfMoney[suitcaseToOpen - 1] == 0)) {
+                        (arrayOfSuitcases[suitcaseToOpen - 1] == 0)) {
                     continue;
                 }
                 break;
