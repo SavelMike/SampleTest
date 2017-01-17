@@ -41,14 +41,14 @@ public class DealGame {
                 arrayOfSuitcases[suitcaseToOpen - 1] = 0; // Eliminate the case from the game;
                 break;
             }
-         /*
-
 
          /*
          *  3.2 get bank offer, bankOffer method
          */
-         bankOffer(arrayOfSuitcases);
-                 /*
+
+         int offer = bankOffer(arrayOfSuitcases);
+
+         /*
          *  3.3 temps user with the offer for his suitcase
          *  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
          * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
