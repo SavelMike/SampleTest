@@ -11,14 +11,13 @@ public class DealGame {
 
         /* 2) User selects a case; variable ownCaseIndex is set*/
         while (true) {
-            int choice = 0;
+            int ownCaseIndex = 0;
             System.out.print("Please select the suitcase that you would like to own (1-6): ");
             Scanner sc = new Scanner(System.in);
-            choice = sc.nextInt();
-            if ((1 <= choice) && (choice < 6)) {
+            ownCaseIndex = sc.nextInt();
+            if ((ownCaseIndex < 1) && (ownCaseIndex > 5)) {
                 continue;
             }
-            ownCaseIndex = choice;
             break;
         }
 
