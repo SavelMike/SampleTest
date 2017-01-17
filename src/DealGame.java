@@ -26,11 +26,9 @@ public class DealGame {
 
         /*
          * 3) the game
-         *  3.1 ask user to open a case he does not own, index of suitcase opened
          */
-        for (int i = 0; i <= 4; i++) {
-        }
-        /*
+        for (int i = 0; i < 4; i++) {
+         /* 3.1 ask user to open a case he does not own, index of suitcase opene
          *3.2 open selected case: assigned 0 to element
          *  3.3 get bank offer, bankOffer method
          *  3.4 temps user with the offer for his suitcase
