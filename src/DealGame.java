@@ -4,7 +4,7 @@
 public class DealGame {
     public static void main(String[] args) {
         /*
-         * 1) Distribute the suitcases
+         * 1) Distribute the suitcases, fill suitcases
          * 2) User selects a case; variable own_case_index is set
          * 3) the game
          *  3.1 ask user to open a case he does not own, index of suitcase opened
@@ -20,7 +20,7 @@ public class DealGame {
     * for each element of arrays output in [] either p, or index or nothing
     * for example, [p] [2] [] [4]
     */
-    public static void display_suitecases(int [] cases, int own_case_index) {
+    public static void displaySuitecases(int [] cases, int own_case_index) {
         for (int i = 0; i < cases.length; i++) {
             if (i != 0) {
                 System.out.println(" ");
@@ -46,6 +46,11 @@ public class DealGame {
     * sum all elements and divide by number of non-zero elements + 1
     */
 
+    /**
+     *
+     * @param cases -
+     * @return
+     */
     public int bankOffer(int[] cases) {
         int sum = 0;
         int amountOfEl = 0;
@@ -57,5 +62,14 @@ public class DealGame {
 
         }
         return  sum / (amountOfEl + 1);
+    }
+
+    /**
+     * Fill suitcases
+     *
+     * @param Array
+     */
+    public static void FillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
+
     }
 }
