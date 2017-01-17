@@ -42,17 +42,34 @@ public class DealGame {
                 break;
             }
 
-         /*
-         *  3.2 get bank offer, bankOffer method
-         */
+            /*
+            *  3.2 get bank offer, bankOffer method
+            */
+            int offer = bankOffer(arrayOfSuitcases);
 
-         int offer = bankOffer(arrayOfSuitcases);
+            /*
+            *  3.3 temps user with the offer for his suitcase
+            */
+            while (true) {
+                System.out.println("Would you like to accept the bank’s offer? (y/n)");
+                Scanner sc = new Scanner(System.in);
+                String choice = sc.next();
+                if (choice.equals("y")) {
+                    System.out.print("You accepted the offer of " + offer + " euro. Your suitcase contained: " + arrayOfSuitcases[ownCaseIndex] +
+                    " euro.");
+                    if (offer > arrayOfSuitcases[ownCaseIndex]) {
+                        System.out.print(" Congratulations, you made the right choice!");
+                    }
+                    else {
+                        System.out.print("  Unfortunately, you could have done better.");
+                    }
 
-         /*
-         *  3.3 temps user with the offer for his suitcase
-         *  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
-         * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
-          */
+                }
+            }
+
+            /*  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
+            * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
+            */
         }
     }
 
