@@ -34,7 +34,7 @@ public class DealGame {
                 System.out.print("Please select the suitcase that you would like to open: ");
                 Scanner scanner = new Scanner(System.in);
                 int suitcaseToOpen = scanner.nextInt();
-                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) || (suitcaseToOpen == 0)) {
+                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) || (arrayOfMoney[suitcaseToOpen] == 0)) {
                     continue;
                 }
                 break;
