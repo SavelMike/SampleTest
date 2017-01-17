@@ -46,6 +46,9 @@ public class DealGame {
 
          /*
          *  3.2 get bank offer, bankOffer method
+         */
+         bankOffer(arrayOfSuitcases);
+                 /*
          *  3.3 temps user with the offer for his suitcase
          *  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
          * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
@@ -88,7 +91,7 @@ public class DealGame {
      * @param cases -
      * @return
      */
-    public int bankOffer(int[] cases) {
+    public static int bankOffer(int[] cases) {
         int sum = 0;
         int amountOfEl = 0;
         for (int i = 0; i < cases.length; i++) {
