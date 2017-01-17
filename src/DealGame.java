@@ -34,14 +34,15 @@ public class DealGame {
                 System.out.print("Please select the suitcase that you would like to open: ");
                 Scanner scanner = new Scanner(System.in);
                 int suitcaseToOpen = scanner.nextInt();
-                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) || (arrayOfMoney[suitcaseToOpen] == 0)) {
+                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) ||
+                        (arrayOfMoney[suitcaseToOpen - 1] == 0)) {
                     continue;
                 }
                 break;
             }
          /*
          *3.2 open selected case: assigned 0 to element */
-         */
+         /*
          *  3.3 get bank offer, bankOffer method
          *  3.4 temps user with the offer for his suitcase
          *  3.5 if user accepted the offer  - the game is over. if not continue the for loop.
