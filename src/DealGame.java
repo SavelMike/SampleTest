@@ -28,7 +28,7 @@ public class DealGame {
          * 3) the game
          */
         for (int i = 0; i < 4; i++) {
-            /* 3.1 ask user to open a case he does not own, index of suitcase opened, display the suitcases */
+            /* 3.1 ask user to open a case he does not own, eliminate chosen case from the game, display the suitcases */
             while (true) {
                 displaySuitecases(arrayOfSuitcases, ownCaseIndex);
                 System.out.print("Please select the suitcase that you would like to open: ");
@@ -38,14 +38,16 @@ public class DealGame {
                         (arrayOfSuitcases[suitcaseToOpen - 1] == 0)) {
                     continue;
                 }
+                arrayOfSuitcases[suitcaseToOpen - 1] = 0; // Eliminate the case from the game;
                 break;
             }
          /*
-         *3.2 open selected case: assigned 0 to element */
+
+
          /*
-         *  3.3 get bank offer, bankOffer method
-         *  3.4 temps user with the offer for his suitcase
-         *  3.5 if user accepted the offer  - the game is over. if not continue the for loop.
+         *  3.2 get bank offer, bankOffer method
+         *  3.3 temps user with the offer for his suitcase
+         *  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
          * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
           */
         }
@@ -102,7 +104,7 @@ public class DealGame {
     /**
      * Fill suitcases
      *
-     * @param Array
+     * @param
      */
     public static void fillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
 
