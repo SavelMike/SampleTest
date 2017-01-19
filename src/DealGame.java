@@ -52,7 +52,7 @@ public class DealGame {
             *  3.3 temps user with the offer for his suitcase
             */
             while (true) {
-                System.out.println("Would you like to accept the bank’s offer? (y/n)");
+                System.out.print("Would you like to accept the bank’s offer? (y/n)");
                 Scanner sc = new Scanner(System.in);
                 String choice = sc.next();
                 if (choice.equals("y")) {
@@ -97,7 +97,10 @@ public class DealGame {
             if (choice.equals("n")) {
                 System.out.println("Your suitcase contains " + arrayOfSuitcases[ownCaseIndex] +
                         " euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent]);
+            } else {
+                continue;
             }
+            break;
         }
 
     }
