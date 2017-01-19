@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 /**
  * Created by Михаил on 16.01.2017.
  */
@@ -7,8 +8,8 @@ public class DealGame {
     public static void main(String[] args) {
 
         /* * 1) Distribute the suitcases, FillSuitcases method */
-        int[] arrayOfSuitcases = {6};
-        int[] arrayOfMoney = {6};
+        int[] arrayOfSuitcases = new int[6];
+        int[] arrayOfMoney = {1, 20, 100, 1000, 2000, 5000};
         fillSuitcases(arrayOfSuitcases, arrayOfMoney);
 
         /* 2) User selects a case; variable ownCaseIndex is set*/
@@ -144,11 +145,17 @@ public class DealGame {
     }
 
     /**
-     * Fill suitcases
+     * Fill suitcases,
      *
      * @param
      */
     public static void fillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
-
+        arrayOfSuitcases[0] = arrayOfMoney[2];
+        arrayOfSuitcases[1] = arrayOfMoney[5];
+        arrayOfSuitcases[2] = arrayOfMoney[3];
+        arrayOfSuitcases[3] = arrayOfMoney[0];
+        arrayOfSuitcases[4] = arrayOfMoney[1];
+        arrayOfSuitcases[5] = arrayOfMoney[4];
+        }
     }
 }
