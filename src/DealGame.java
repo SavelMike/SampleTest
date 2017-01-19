@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Created by Михаил on 16.01.2017.
@@ -158,11 +159,26 @@ public class DealGame {
      * @param
      */
     public static void fillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
-        arrayOfSuitcases[0] = arrayOfMoney[2];
-        arrayOfSuitcases[1] = arrayOfMoney[5];
-        arrayOfSuitcases[2] = arrayOfMoney[3];
-        arrayOfSuitcases[3] = arrayOfMoney[0];
-        arrayOfSuitcases[4] = arrayOfMoney[1];
-        arrayOfSuitcases[5] = arrayOfMoney[4];
+        for (int i = 0; i < arrayOfSuitcases.length; i++) {
+            arrayOfSuitcases[i] = pickMoneyRandomley(arrayOfMoney);
+        }
+    }
+
+    public static int pickMoneyRandomley(int[] arrayOfMoney) {
+        int value;
+        while (true) {
+            int index = getRandom(5);
+            if (arrayOfMoney[index] == 0) {
+                continue;
+            }
+            value = arrayOfMoney[index];
+            arrayOfMoney[index] = 0;
+            return value;
+        }
+    }
+
+    public static int getRandom(int max) {
+        Random rand = new Random();
+        return rand.nextInt(max + 1);
     }
 }
