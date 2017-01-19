@@ -17,9 +17,10 @@ public class DealGame {
             System.out.print("Please select the suitcase that you would like to own (1-6): ");
             Scanner sc = new Scanner(System.in);
             ownCaseIndex = sc.nextInt();
-            if ((ownCaseIndex < 1) || (ownCaseIndex > 6)) {
+            if ((ownCaseIndex < 0) || (ownCaseIndex > 6)) {
                 continue;
             }
+            ownCaseIndex = ownCaseIndex - 1;
             break;
         }
 
@@ -34,7 +35,7 @@ public class DealGame {
                 System.out.print("Please select the suitcase that you would like to open: ");
                 Scanner scanner = new Scanner(System.in);
                 int suitcaseToOpen = scanner.nextInt();
-                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex) ||
+                if ((suitcaseToOpen < 1) || (suitcaseToOpen > 6) || (suitcaseToOpen == ownCaseIndex + 1) ||
                         (arrayOfSuitcases[suitcaseToOpen - 1] == 0)) {
                     continue;
                 }
@@ -71,25 +72,31 @@ public class DealGame {
                 }
             }
         }
+
         /*
-        * 4) Special situation: ask player to swap. If user swap, change his suitcase
-        *
-        * 4.1 Find content of last unopened case
+        * 4 Find content of last unopened case
         */
         int lastCaseContent = 0;
         for (int i = 0; i < arrayOfSuitcases.length; i++) {
             if ((arrayOfSuitcases[i] != 0) && (i != ownCaseIndex)) {
-                lastCaseContent = arrayOfSuitcases[i];
+                lastCaseContent = i;
             }
         }
 
+        /*
+        *  4) Special situation: ask player to swap. If user swap, change his suitcase
+         */
         while (true) {
             System.out.println("There is only 1 suitcase left. Would you like to swap? (y/n)");
             Scanner sc = new Scanner(System.in);
             String choice = sc.next();
             if (choice.equals("y")) {
+                System.out.println("Your suitcase contains " + arrayOfSuitcases[lastCaseContent] +
+                        "  euro. The other unopened suitcase contained " + arrayOfSuitcases[ownCaseIndex] + " euro.");
+            }
+            if (choice.equals("n")) {
                 System.out.println("Your suitcase contains " + arrayOfSuitcases[ownCaseIndex] +
-                        "  euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent] + " euro.");
+                        " euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent]);
             }
         }
 
@@ -104,7 +111,7 @@ public class DealGame {
             if (i != 0) {
                 System.out.print(" ");
             }
-            if (i + 1 == own_case_index) {
+            if (i == own_case_index) {
                 System.out.print("[p]");
                 continue;
             }
@@ -113,7 +120,7 @@ public class DealGame {
                 continue;
             }
 
-            System.out.print("[" + i + 1 + "]");
+            System.out.print("[" + (i + 1) + "]");
         }
         System.out.println();
     }
