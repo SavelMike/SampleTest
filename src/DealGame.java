@@ -64,12 +64,35 @@ public class DealGame {
                     }
                     System.exit(0);
                 }
+                if (choice.equals("n")) {
+                    break;
+                } else {
+                    continue;
+                }
             }
-
-            /*  3.4 if user accepted the offer  - the game is over. if not continue the for loop.
-            * 4) Special situation: ask player to swamp. If user swamp, change his suitcase
-            */
         }
+        /*
+        * 4) Special situation: ask player to swap. If user swap, change his suitcase
+        *
+        * 4.1 Find content of last unopened case
+        */
+        int lastCaseContent = 0;
+        for (int i = 0; i < arrayOfSuitcases.length; i++) {
+            if ((arrayOfSuitcases[i] != 0) && (i != ownCaseIndex)) {
+                lastCaseContent = arrayOfSuitcases[i];
+            }
+        }
+
+        while (true) {
+            System.out.println("There is only 1 suitcase left. Would you like to swap? (y/n)");
+            Scanner sc = new Scanner(System.in);
+            String choice = sc.next();
+            if (choice.equals("y")) {
+                    System.out.println("Your suitcase contains " + arrayOfSuitcases[ownCaseIndex] +
+                            "  euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent] + " euro." );
+                }
+        }
+
     }
 
     /*
