@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 /**
  * Created by Михаил on 16.01.2017.
  */
@@ -89,9 +88,9 @@ public class DealGame {
             Scanner sc = new Scanner(System.in);
             String choice = sc.next();
             if (choice.equals("y")) {
-                    System.out.println("Your suitcase contains " + arrayOfSuitcases[ownCaseIndex] +
-                            "  euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent] + " euro." );
-                }
+                System.out.println("Your suitcase contains " + arrayOfSuitcases[ownCaseIndex] +
+                        "  euro. The other unopened suitcase contained " + arrayOfSuitcases[lastCaseContent] + " euro.");
+            }
         }
 
     }
@@ -100,21 +99,21 @@ public class DealGame {
     * for each element of arrays output in [] either p, or index or nothing
     * for example, [p] [2] [] [4]
     */
-    public static void displaySuitecases(int [] cases, int own_case_index) {
+    public static void displaySuitecases(int[] cases, int own_case_index) {
         for (int i = 0; i < cases.length; i++) {
             if (i != 0) {
-                System.out.println(" ");
+                System.out.print(" ");
             }
             if (i + 1 == own_case_index) {
-                System.out.println("[p]");
+                System.out.print("[p]");
                 continue;
             }
             if (cases[i] == 0) {
-                System.out.println("[]");
+                System.out.print("[]");
                 continue;
             }
 
-            System.out.print("["+ i + 1 + "]");
+            System.out.print("[" + i + 1 + "]");
         }
         System.out.println();
     }
@@ -127,7 +126,6 @@ public class DealGame {
     */
 
     /**
-     *
      * @param cases -
      * @return
      */
@@ -137,11 +135,11 @@ public class DealGame {
         for (int i = 0; i < cases.length; i++) {
             sum += cases[i];
             if (cases[i] != 0) {
-                amountOfEl ++;
+                amountOfEl++;
             }
 
         }
-        return  sum / (amountOfEl + 1);
+        return sum / (amountOfEl + 1);
     }
 
     /**
@@ -156,6 +154,5 @@ public class DealGame {
         arrayOfSuitcases[3] = arrayOfMoney[0];
         arrayOfSuitcases[4] = arrayOfMoney[1];
         arrayOfSuitcases[5] = arrayOfMoney[4];
-        }
     }
 }
