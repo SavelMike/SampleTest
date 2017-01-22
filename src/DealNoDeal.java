@@ -14,7 +14,7 @@ public class DealNoDeal {
 
         /* 1) Create and fill suitcases */
         int[] arrayOfSuitcases = new int[6];
-        int[] arrayOfMoney = {1, 20, 1000, 2000, 5000};
+        int[] arrayOfMoney = {1, 20, 100, 1000, 2000, 5000};
         fillSuitcases(arrayOfSuitcases, arrayOfMoney);
 
         /* 2) Ask user for his suitcases, save in a variable userCaseIndex */
