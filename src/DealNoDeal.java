@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -103,20 +104,34 @@ public class DealNoDeal {
 
     /**
      * Fill arrayOfSuitcases with money randomly
-     * @param arrayOfSuitcaes
+     * @param arrayOfSuitcases
      * @param arrayOfMoney
      */
-    public static void fillSuitcases(int[] arrayOfSuitcaes, int[] arrayOfMoney) {
-
+    public static void fillSuitcases(int[] arrayOfSuitcases, int[] arrayOfMoney) {
+        for (int i = 0; i < arrayOfSuitcases.length; i++) {
+            arrayOfSuitcases[i] = pickMoneyRandomley(arrayOfMoney);
+        }
     }
 
     /**
      * Display an array of cases with [p] if case is owned by user, [] if case is eliminated from the game, and [index] for rest of elements
-     * @param araySuitcases
+     * @param arraySuitcases
      * @param userCaseIndex
      */
-    public static void displaySuitcases(int[] araySuitcases, int userCaseIndex) {
-
+    public static void displaySuitcases(int[] arraySuitcases, int userCaseIndex) {
+        for (int i = 0; i < arraySuitcases.length; i++) {
+            if (userCaseIndex == i) {
+                System.out.print("[p]");
+            }
+            if (arraySuitcases[i] == 0) {
+                System.out.print("[]");
+            }
+            if (i != 0) {
+                System.out.print(" ");
+            }
+            System.out.println("[" + (i + 1) + "]");
+        }
+        System.out.println();
     }
 
 
@@ -125,9 +140,37 @@ public class DealNoDeal {
      * @param arrayOfSuitcases
      */
     public static int bankOffer(int[] arrayOfSuitcases) {
+        int sum = 0;
+        int unopenedCases = 0;
+        for (int i = 0; i < arrayOfSuitcases.length; i++) {
+            sum += arrayOfSuitcases[i];
+            if (arrayOfSuitcases[i] != 0) {
+                unopenedCases++;
+            }
 
+        }
+        return sum / (unopenedCases + 1);
+    }
+
+    public static int pickMoneyRandomley(int[] arrayOfMoney) {
+        int value;
+        while (true) {
+            int index = getRandom(5);
+            if (arrayOfMoney[index] == 0) {
+                continue;
+            }
+            value = arrayOfMoney[index];
+            arrayOfMoney[index] = 0;
+            return value;
+        }
+    }
+
+    public static int getRandom(int max) {
+        Random rand = new Random();
+        return rand.nextInt(max + 1);
     }
 }
+
 
 
 
