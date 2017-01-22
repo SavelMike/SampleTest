@@ -8,16 +8,18 @@ public class DealNoDeal {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("");
+
         /* 1) Create and fill suitcases */
-
-        /* 2) Ask user for his suitcaes, save in variable userCaseIndex */
-
+        int[] arrayOfSuitcases = new int[6];
+        int[] attayOfMoney = {1, 20, 1000, 2000, 5000};
+        
+        /* 2) Ask user for his suitcases, save in variable userCaseIndex */
 
          /* 3) Ask user to open a suitcase, it must be a new suitcase. Repeat if input is wrong */
 
+         /* 4) Offer a user with BankOffer method, if Yes, game is over */
 
-         /* 4) Offer a user with BankOffer method
+         /* 5) If there is last element in array, Offer user to swap his case to lat case */
     }
 
 
