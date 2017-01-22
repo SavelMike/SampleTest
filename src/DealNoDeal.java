@@ -29,15 +29,75 @@ public class DealNoDeal {
             break;
         }
 
-         /* 3) Game loop contains 4 steps:
+         /* 3) Game loop contains 3 rounds: */
+        for (int i = 0; i < 4; i++) {
 
-         /*  3.1) Ask user to open a suitcase, it must be a new suitcase. Repeat if input is wrong */
+            while (true) {
+                displaySuitcases(arrayOfSuitcases, userCaseIndex);
+                /*  3.1) Ask user to open a suitcase, it must be a new suitcase. Repeat if input is wrong */
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Please select the suitcase that you would like to open (1-6): ");
+                int suitcaseToOpen = sc.nextInt();
+                if ((suitcaseToOpen > 6) || (suitcaseToOpen < 0) || (suitcaseToOpen == userCaseIndex + 1)
+                        || arrayOfSuitcases[userCaseIndex] == 0) {
+                    continue;
+                }
+                arrayOfSuitcases[suitcaseToOpen - 1] = 0;
+                break;
+            }
+        }
+            /*  3.2) Call offerBank method */
+            int offer = bankOffer(arrayOfSuitcases);
 
-         /*  3.2) Call offerBank method
 
-         /*  3.3) Offer bank offer to user, if user accepted game is over  */
+            /*  3.3) Offer bank offer to user, if user accepted game is over  */
+            while (true) {
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Would you like to accept the bank’s offer? (y/n)");
+                String answer = sc.next();
+                if (answer.equals("y")) {
+                    System.out.print("You accepted the offer of " + offer + " euro. Your own suitcase contained "
+                                    + arrayOfSuitcases[userCaseIndex] + " euro.");
+                    if (offer > arrayOfSuitcases[userCaseIndex]) {
+                        System.out.print(" Congratulations, you made the right choice!");
+                    } else {
+                        System.out.print(" Unfortunately, you could have done better.");
+                    }
+                    System.exit(0);
+                }
+                if (answer.equals("n")) {
+                    break;
+                } else {
+                    continue;
+                }
+            }
 
-         /*  3.4) If there is last element in array, offer user to swap his case to last case */
+        /* 4) If there is last element in array, offer user to swap his case to last case */
+
+        /* 4.1 Find last element */
+        int indLastCase = 0;
+        for (int i = 0; i < arrayOfSuitcases.length; i++) {
+            if ((arrayOfSuitcases[i] != 0) && (i != userCaseIndex)) {
+                indLastCase = i;
+            }
+        }
+
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("There is only 1 suitcase left. Would you like to swap? (y/n)");
+            String choice = scanner.next();
+            if (choice.equals("y")) {
+                System.out.println("Your suitcase contains " + arrayOfSuitcases[indLastCase] +
+                        " euro. The other unopened suitcase contained " + arrayOfSuitcases[userCaseIndex]);
+            }
+            if (choice.equals(("n"))) {
+                System.out.println("Your suitcase contains " + arrayOfSuitcases[userCaseIndex] +
+                    " euro. The other unopened suitcase contained " + arrayOfSuitcases[indLastCase]);
+            } else {
+                continue;
+            }
+            break;
+        }
     }
 
 
@@ -64,7 +124,7 @@ public class DealNoDeal {
      * Create an offer by dividing sum of all unopened suitcases on amount of unopened cases plus 1
      * @param arrayOfSuitcases
      */
-    public static void bankOffer(int[] arrayOfSuitcases) {
+    public static int bankOffer(int[] arrayOfSuitcases) {
 
     }
 }
