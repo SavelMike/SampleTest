@@ -16,22 +16,28 @@ public class DealNoDeal {
         int[] arrayOfMoney = {1, 20, 1000, 2000, 5000};
         fillSuitcases(arrayOfSuitcases, arrayOfMoney);
 
-         /* 2) Ask user for his suitcases, save in a variable userCaseIndex */
-        int userCaseIndex = 0;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Please select the suitcase that you would like to own (1-6): ");
-        userCaseIndex = scanner.nextInt();
-        if ((userCaseIndex > 6) || (userCaseIndex < 0)) {
-            continue;
+        /* 2) Ask user for his suitcases, save in a variable userCaseIndex */
+        int userCaseIndex;
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Please select the suitcase that you would like to own (1-6): ");
+            userCaseIndex = scanner.nextInt();
+            if ((userCaseIndex > 6) || (userCaseIndex < 0)) {
+                continue;
+            }
+            userCaseIndex = userCaseIndex - 1;
+            break;
         }
 
          /* 3) Game loop contains 4 steps:
 
          /*  3.1) Ask user to open a suitcase, it must be a new suitcase. Repeat if input is wrong */
 
-         /*  3.2) Offer a user with BankOffer method, if Yes, game is over */
+         /*  3.2) Call offerBank method
 
-         /*  3.3) If there is last element in array, offer user to swap his case to last case */
+         /*  3.3) Offer bank offer to user, if user accepted game is over  */
+
+         /*  3.4) If there is last element in array, offer user to swap his case to last case */
     }
 
 
