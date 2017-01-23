@@ -46,7 +46,7 @@ public class DealNoDeal {
                 arrayOfSuitcases[suitcaseToOpen - 1] = 0;
                 break;
             }
-        }
+
             /*  3.2) Call offerBank method */
             int offer = bankOffer(arrayOfSuitcases);
 
@@ -58,7 +58,7 @@ public class DealNoDeal {
                 String answer = sc.next();
                 if (answer.equals("y")) {
                     System.out.print("You accepted the offer of " + offer + " euro. Your own suitcase contained "
-                                    + arrayOfSuitcases[userCaseIndex] + " euro.");
+                            + arrayOfSuitcases[userCaseIndex] + " euro.");
                     if (offer > arrayOfSuitcases[userCaseIndex]) {
                         System.out.print(" Congratulations, you made the right choice!");
                     } else {
@@ -72,10 +72,11 @@ public class DealNoDeal {
                     continue;
                 }
             }
+        }
 
         /* 4) If there is last element in array, offer user to swap his case to last case */
 
-        /* 4.1 Find last element */
+        /* 4.1 Find last element in an array*/
         int indLastCase = 0;
         for (int i = 0; i < arrayOfSuitcases.length; i++) {
             if ((arrayOfSuitcases[i] != 0) && (i != userCaseIndex)) {
@@ -89,11 +90,13 @@ public class DealNoDeal {
             String choice = scanner.next();
             if (choice.equals("y")) {
                 System.out.println("Your suitcase contains " + arrayOfSuitcases[indLastCase] +
-                        " euro. The other unopened suitcase contained " + arrayOfSuitcases[userCaseIndex]);
+                            " euro. The other unopened suitcase contained " + arrayOfSuitcases[userCaseIndex]);
+                System.exit(0);
             }
             if (choice.equals(("n"))) {
                 System.out.println("Your suitcase contains " + arrayOfSuitcases[userCaseIndex] +
-                    " euro. The other unopened suitcase contained " + arrayOfSuitcases[indLastCase]);
+                            " euro. The other unopened suitcase contained " + arrayOfSuitcases[indLastCase]);
+                System.exit(0);
             } else {
                 continue;
             }
@@ -120,16 +123,19 @@ public class DealNoDeal {
      */
     public static void displaySuitcases(int[] arraySuitcases, int userCaseIndex) {
         for (int i = 0; i < arraySuitcases.length; i++) {
-            if (userCaseIndex == i) {
-                System.out.print("[p]");
-            }
-            if (arraySuitcases[i] == 0) {
-                System.out.print("[]");
-            }
             if (i != 0) {
                 System.out.print(" ");
             }
-            System.out.println("[" + (i + 1) + "]");
+            if (userCaseIndex == i) {
+                System.out.print("[p]");
+                continue;
+            }
+            if (arraySuitcases[i] == 0) {
+                System.out.print("[]");
+                continue;
+            }
+
+            System.out.print("[" + (i + 1) + "]");
         }
         System.out.println();
     }
@@ -152,6 +158,11 @@ public class DealNoDeal {
         return sum / (unopenedCases + 1);
     }
 
+    /**
+     *
+     * @param arrayOfMoney
+     * @return
+     */
     public static int pickMoneyRandomley(int[] arrayOfMoney) {
         int value;
         while (true) {
@@ -165,6 +176,11 @@ public class DealNoDeal {
         }
     }
 
+    /**
+     *
+     * @param max
+     * @return
+     */
     public static int getRandom(int max) {
         Random rand = new Random();
         return rand.nextInt(max + 1);
