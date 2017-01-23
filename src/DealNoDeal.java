@@ -39,7 +39,7 @@ public class DealNoDeal {
                 Scanner sc = new Scanner(System.in);
                 System.out.print("Please select the suitcase that you would like to open (1-6): ");
                 int suitcaseToOpen = sc.nextInt();
-                if ((suitcaseToOpen > 6) || (suitcaseToOpen < 0) || (suitcaseToOpen == userCaseIndex + 1)
+                if ((suitcaseToOpen > 6) || (suitcaseToOpen < 1) || (suitcaseToOpen == userCaseIndex + 1)
                         || arrayOfSuitcases[userCaseIndex] == 0) {
                     continue;
                 }
