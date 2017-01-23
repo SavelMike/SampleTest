@@ -23,7 +23,7 @@ public class DealNoDeal {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Please select the suitcase that you would like to own (1-6): ");
             userCaseIndex = scanner.nextInt();
-            if ((userCaseIndex > 6) || (userCaseIndex < 0)) {
+            if ((userCaseIndex > 6) || (userCaseIndex < 1)) {
                 continue;
             }
             userCaseIndex = userCaseIndex - 1;
