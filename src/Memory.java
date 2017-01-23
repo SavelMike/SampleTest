@@ -6,8 +6,8 @@ public class Memory {
 
         /* 1) Create an array of duplicate elements and array of 0. By using method fillArray */
 
-        /* 2)Loop of the game */
-        while (true) {
+        /* 2)Loop of the game. method isGameOver return false if all elements in opened array equals 1. Then loop is over */
+        while (isGameOver(opened)) {
             /* Ask user for ind1 and ind2 */
 
             /* Check user's input */
@@ -46,6 +46,14 @@ public class Memory {
      * @param ind2
      * */
     public static void checkMatches(int[] arrayOfDuplicates, int[] opened, int ind1, int ind2) {
+
+    }
+
+    /**
+     * if elements in array opened all are equal 1, then return false.
+     * @param opened
+     */
+    public static boolean isGameOver(int[] opened) {
 
     }
 }
