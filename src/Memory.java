@@ -32,8 +32,10 @@ public class Memory {
     }
 
     /**
-     * Display array, if elements of gameCard are the same, they are printed as (i), if elements are not guessed print without parentheses.
-     * if elements are not chosen yet, print "."
+     * Display array of duplicates:
+        - guessed are printed without parentheses
+        - all already found pairs  are printed in parentheses
+        - others are printed as .
      * @param arrGameCard
      * @param arrFoundPairs
      * @param ind1
@@ -42,10 +44,23 @@ public class Memory {
     public static void displayArray(int[] arrGameCard, int[] arrFoundPairs, int ind1, int ind2) {
         System.out.println("[");
         for (int i = 0; i < arrGameCard.length; i++) {
-            if (i == ind1) || (i == ind2) || () {
+            /*  */
+            if (arrFoundPairs[i] != 0) {
+                System.out.print("(" + arrGameCard[i] + ")" );
+                continue;
+            }
+            /*   Duplicates are guessed, print without parentheses */
+            if (((i == ind1) || (i == ind2)) && (arrGameCard[i] == 0)) {
+                System.out.print(" " + arrGameCard[i]);
+                continue;
+            }
+            if ((i != ind1) && (i != ind2) && (arrFoundPairs[i] == 0))  {
                 System.out.print(" .");
+                continue;
             }
         }
+        System.out.println("]");
+        System.out.println("---------------------------------------------");
     }
 
     /**
