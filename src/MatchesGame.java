@@ -52,7 +52,7 @@ public class MatchesGame {
         Scanner sc = new Scanner(System.in);
         int playerChoice;
         while (true) {
-            System.out.print("Player " + name + ", how many matches so you take (1, 2 or 3)? ");
+            System.out.print( name + ", how many matches so you take (1, 2 or 3)? ");
             playerChoice = sc.nextInt();
 
             if ((numOfMatches == 3) && (playerChoice == 3)) {
