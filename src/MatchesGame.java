@@ -48,19 +48,16 @@ public class MatchesGame {
                 System.out.print("Player 2, how many matches so you take (1, 2 or 3)? ");
                 playerChoice = scanner.nextInt();
 
-                if (numOfMatches == 3) {
-                    if (playerChoice == 3) {
-                        continue;
-                    }
-                }
-                if (numOfMatches == 2) {
-                    if (playerChoice > 1) {
-                        continue;
-                    }
-                }
-                if (playerChoice > 3) {
+                if ((numOfMatches == 3) && (playerChoice == 3)) {
                     continue;
                 }
+                if ((numOfMatches == 2) && (playerChoice > 1)) {
+                    continue;
+                }
+                if ((playerChoice > 3) && (playerChoice < 1)) {
+                    continue;
+                }
+                break;
             }
             numOfMatches = numOfMatches - playerChoice;
             displayFlow(numOfMatches);
