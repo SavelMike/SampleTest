@@ -44,22 +44,19 @@ public class Memory {
     public static void displayArray(int[] arrGameCard, int[] arrFoundPairs, int ind1, int ind2) {
         System.out.println("[");
         for (int i = 0; i < arrGameCard.length; i++) {
-            /*  */
+            /*  if corespondent elements don't equal 0 then actual elements are printed in parentheses */
             if (arrFoundPairs[i] != 0) {
-                System.out.print("(" + arrGameCard[i] + ")" );
+                System.out.print(" (" + arrGameCard[i] + ")" );
                 continue;
             }
-            /*   Duplicates are guessed, print without parentheses */
-            if (((i == ind1) || (i == ind2)) && (arrGameCard[i] == 0)) {
+            /* display guessed elements without parentheses */
+            if ((i == ind1) || (i == ind2)) {
                 System.out.print(" " + arrGameCard[i]);
                 continue;
             }
-            if ((i != ind1) && (i != ind2) && (arrFoundPairs[i] == 0))  {
-                System.out.print(" .");
-                continue;
-            }
+            System.out.print(" .");
         }
-        System.out.println("]");
+        System.out.println(" ]");
         System.out.println("---------------------------------------------");
     }
 
@@ -84,7 +81,13 @@ public class Memory {
      * @param ind2
      * */
     public static void checkMatches(int[] arrGameCard, int[] arrFoundPairs, int ind1, int ind2) {
-
+        if (arrGameCard[ind1] == arrGameCard[ind2]) {
+            System.out.println("Yeah! You found a pair");
+            arrFoundPairs[ind1] = 1;
+            arrFoundPairs[ind2] = 1;
+        } else {
+            System.out.println("No " + arrGameCard[ind1] + " and " + arrGameCard[ind2] + " is not a memory pair");
+        }
     }
 
     /**
@@ -93,6 +96,11 @@ public class Memory {
      */
 
     public static boolean isGameOver(int[] arrFoundPairs) {
-
+        for (int i = 0; i < arrFoundPairs.length; i++) {
+            if (arrFoundPairs[i] == 1) {
+                return true;
+            }
+        }
+        return false;
     }
 }
