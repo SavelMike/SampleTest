@@ -42,7 +42,7 @@ public class Memory {
      * @param ind2
      */
     public static void displayArray(int[] arrGameCard, int[] arrFoundPairs, int ind1, int ind2) {
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < arrGameCard.length; i++) {
             /*  if corespondent elements don't equal 0 then actual elements are printed in parentheses */
             if (arrFoundPairs[i] != 0) {
@@ -97,10 +97,12 @@ public class Memory {
 
     public static boolean isGameOver(int[] arrFoundPairs) {
         for (int i = 0; i < arrFoundPairs.length; i++) {
-            if (arrFoundPairs[i] == 1) {
-                return true;
+            if (arrFoundPairs[i] == 0) {
+                return false;
+            } else {
+                continue;
             }
         }
-        return false;
+        return true;
     }
 }
