@@ -15,24 +15,23 @@ public class MatchesGame {
                 System.out.println("Player 1 lost");
                 break;
             }
+
+            /* get player 1 input */
             int playerChoice;
             while (true) {
-                /* get player 1 input */
                 System.out.print("Player 1, how many matches do you take (1, 2 or 3)? ");
                 playerChoice = scanner.nextInt();
-                if (numOfMatches == 3) {
-                    if (playerChoice == 3) {
-                        continue;
-                    }
-                }
-                if (numOfMatches == 2) {
-                    if (playerChoice > 1) {
-                        continue;
-                    }
-                }
-                if (playerChoice > 3) {
+
+                if ((numOfMatches == 3) && (playerChoice == 3)) {
                     continue;
                 }
+                if ((numOfMatches == 2) && (playerChoice > 1)) {
+                    continue;
+                }
+                if ((playerChoice > 3) || (playerChoice < 1)) {
+                    continue;
+                }
+                break;
             }
 
             numOfMatches = numOfMatches - playerChoice;
