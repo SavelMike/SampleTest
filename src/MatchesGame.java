@@ -54,7 +54,7 @@ public class MatchesGame {
                 if ((numOfMatches == 2) && (playerChoice > 1)) {
                     continue;
                 }
-                if ((playerChoice > 3) && (playerChoice < 1)) {
+                if ((playerChoice > 3) || (playerChoice < 1)) {
                     continue;
                 }
                 break;
@@ -69,6 +69,17 @@ public class MatchesGame {
             System.out.print(" |");
         }
         System.out.println(" (" + numOfMatches + ")");
+    }
+
+    /**
+     * Ask player for playerChoice, check the input, return integer
+     * @param numOfMatches
+     * @return
+     */
+    public static int playerMove(int numOfMatches) {
+        Scanner sc = new Scanner(System.in);
+
+        return playerChoice;
     }
 }
 
