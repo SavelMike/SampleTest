@@ -12,7 +12,7 @@ public class Memory {
         fillArray(arrGameCard, arrFoundPairs);
 
         /* 2)Loop of the game. method isGameOver return false if all elements in opened array equals 1. Then loop is over */
-        while (isGameOver(arrGameCard)) {
+        while (isGameOver(arrFoundPairs) == false) {
             /* Ask user for ind1 and ind2 */
             Scanner sc = new Scanner(System.in);
             System.out.println("Please enter index 1:");
@@ -23,9 +23,8 @@ public class Memory {
             if ((ind1 < 0) || (ind1 > 7) || (ind2 < 0) || (ind2 > 7) || (ind1 == ind2)) {
                 continue;
             }
+            /* check whether player guessed equal elements  */
             checkMatches(arrGameCard, arrFoundPairs, ind1, ind2);
-
-            /* Call method checkMatches */
 
             displayArray(arrGameCard, arrFoundPairs, ind1, ind2);
         }
