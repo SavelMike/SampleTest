@@ -23,13 +23,13 @@ public class IndicateVowels {
     }
 
     /**
-     * Indicate vowels from user's input, return true if there are vowels
-     * @param userInput
+     * Calculate vowels from user's input, return true if there are vowels
+     * @param symbol
      * @return true if vowel
      */
-    public static boolean isVowel(char userInput) {
-        if (('a' == userInput) || ('e' == userInput) || ('i' == userInput) || ('o' == userInput) || ('u' == userInput) || ('y' == userInput)
-                || ('A' == userInput) || ('E' == userInput) || ('I' == userInput) || ('O' == userInput) || ('U' == userInput) || ('Y' == userInput)) {
+    public static boolean isVowel(char symbol) {
+        if (('a' == symbol) || ('e' == symbol) || ('i' == symbol) || ('o' == symbol) || ('u' == symbol) || ('y' == symbol) ||
+                ('A' == symbol) || ('E' == symbol) || ('I' == symbol) || ('O' == symbol) || ('U' == symbol) || ('Y' == symbol)) {
             return true;
         } else {
             return false;
