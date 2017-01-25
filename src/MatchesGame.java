@@ -17,22 +17,8 @@ public class MatchesGame {
             }
 
             /* get player 1 input */
-            int playerChoice;
-            while (true) {
-                System.out.print("Player 1, how many matches do you take (1, 2 or 3)? ");
-                playerChoice = scanner.nextInt();
-
-                if ((numOfMatches == 3) && (playerChoice == 3)) {
-                    continue;
-                }
-                if ((numOfMatches == 2) && (playerChoice > 1)) {
-                    continue;
-                }
-                if ((playerChoice > 3) || (playerChoice < 1)) {
-                    continue;
-                }
-                break;
-            }
+            int playerChoice = 0;
+            playerChoice = playerMove(numOfMatches, "Player 1");
 
             numOfMatches = numOfMatches - playerChoice;
             displayFlow(numOfMatches);
@@ -44,21 +30,7 @@ public class MatchesGame {
             }
 
             /* get player 2 input */
-            while (true) {
-                System.out.print("Player 2, how many matches so you take (1, 2 or 3)? ");
-                playerChoice = scanner.nextInt();
-
-                if ((numOfMatches == 3) && (playerChoice == 3)) {
-                    continue;
-                }
-                if ((numOfMatches == 2) && (playerChoice > 1)) {
-                    continue;
-                }
-                if ((playerChoice > 3) || (playerChoice < 1)) {
-                    continue;
-                }
-                break;
-            }
+            playerChoice = playerMove(numOfMatches, "Player 2");
             numOfMatches = numOfMatches - playerChoice;
             displayFlow(numOfMatches);
         }
@@ -74,11 +46,26 @@ public class MatchesGame {
     /**
      * Ask player for playerChoice, check the input, return integer
      * @param numOfMatches
-     * @return
+     * @return number of matches player takes (1,2 or 3)
      */
-    public static int playerMove(int numOfMatches) {
+    public static int playerMove(int numOfMatches, String name) {
         Scanner sc = new Scanner(System.in);
+        int playerChoice;
+        while (true) {
+            System.out.print("Player " + name + ", how many matches so you take (1, 2 or 3)? ");
+            playerChoice = sc.nextInt();
 
+            if ((numOfMatches == 3) && (playerChoice == 3)) {
+                continue;
+            }
+            if ((numOfMatches == 2) && (playerChoice > 1)) {
+                continue;
+            }
+            if ((playerChoice > 3) || (playerChoice < 1)) {
+                continue;
+            }
+            break;
+        }
         return playerChoice;
     }
 }
