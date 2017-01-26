@@ -15,8 +15,9 @@ public class Hangman {
             Scanner sc = new Scanner(System.in);
             System.out.println("Input your letter, please: ");
             String l = sc.next();
-            if (/* call method markOpenedChars(), return true if user guessed and false if opposite */) {
-               continue;
+            if (markOpenedChars()) {
+                    /* good attempt */
+                continue;
             } else {
                 /* If attempts equal 0, player lost. if not attempts minus 1; */
                 if (attempts == 0) {
@@ -28,7 +29,7 @@ public class Hangman {
     }
 
     /**
-     * Display defined word with opened letters if user has already guessed them
+     * Display word hiding chars not guessed yet
      * @param word
      * @param opened
      *
@@ -39,11 +40,13 @@ public class Hangman {
     }
 
     /**
-     * Mark all chars which are opened in the word
+     * if word consist I, put 1 in all corespondent elements in opened[]
      * @param opened
      * @param word
+     * @param l
+     * return true if char I presents in word
      */
-    public static boolean markOpenedChars(int[] opened, String word) {
+    public static boolean markOpenedChars(int[] opened, String word, char l) {
 
     }
 
