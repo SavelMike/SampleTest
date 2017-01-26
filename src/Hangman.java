@@ -8,7 +8,7 @@ public class Hangman {
     public static void main(String[] args) {
 
         /*  define word for be figured out as a constant, create an array of 0, initialize variable attempts  */
-        String word = "simplification";
+        String word = "apple";
         int[] opened = new int[word.length()];
         int attempts = 6;
         for (int i = 0; i < opened.length; i++) {
@@ -16,6 +16,7 @@ public class Hangman {
         }
 
         while (!gameIsOver(opened)) {
+            displayWord(opened, word);
             /* get char from user input */
             Scanner sc = new Scanner(System.in);
             System.out.println("Input your letter, please: ");
@@ -31,9 +32,9 @@ public class Hangman {
                 }
                 attempts--;
             }
-            displayWord(opened, word);
         }
         System.out.println("Congratulations, You won!");
+        displayWord(opened, word);
     }
 
     /**
