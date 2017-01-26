@@ -9,7 +9,7 @@ public class Hangman {
 
         /*  define word for be figured out as a constant, create an array of 0, initialize variable attempts  */
         String word = "simplification";
-        int[] opened = new int[14];
+        int[] opened = new int[word.length()];
         int attempts = 6;
         for (int i = 0; i < opened.length; i++) {
             opened[i] = 0;
@@ -19,7 +19,7 @@ public class Hangman {
             /* get char from user input */
             Scanner sc = new Scanner(System.in);
             System.out.println("Input your letter, please: ");
-            String l = sc.next();
+            char l = sc.next().charAt(0);
             if (markOpenedChars(opened, word, l)) {
                 /* good attempt */
                 continue;
@@ -31,6 +31,7 @@ public class Hangman {
                 }
                 attempts--;
             }
+            displayWord(opened, word);
         }
         System.out.println("Congratulations, You won!");
     }
@@ -43,7 +44,14 @@ public class Hangman {
      */
 
     public static void displayWord(int[] opened, String word) {
-
+        for (int i = 0; i < word.length(); i++) {
+            if (opened[i] == 1) {
+                System.out.print(" " + word.charAt(i));
+            } else {
+                System.out.print(" _");
+            }
+        }
+        System.out.println();
     }
 
     /**
@@ -53,12 +61,16 @@ public class Hangman {
      * @param l
      * return true if ch l presents in word
      */
-    public static boolean markOpenedChars(int[] opened, String word, String l) {
+    public static boolean markOpenedChars(int[] opened, String word, char l) {
+
+        int matches = 0;
         for (int i = 0; i < opened.length; i++) {
-            if (word.charAt(i) == l.charAt(i)) {
+            if (word.charAt(i) == l) {
                 opened[i] = 1;
+                matches ++;
             }
         }
+        return (matches > 0);
     }
 
     /**
@@ -67,6 +79,11 @@ public class Hangman {
      * @return
      */
     public static boolean gameIsOver(int[] opened) {
-
+        for (int i = 0; i < opened.length; i++) {
+            if (opened[i] == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
