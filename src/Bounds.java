@@ -8,7 +8,7 @@ public class Bounds {
         getDoubleBetweenBounds(35, 60);
     }
 
-    public static double getDoubleBetweenBounds(int lowerBound, int upperBound) {
+    public static void getDoubleBetweenBounds(int lowerBound, int upperBound) {
         System.out.println("(lower bond = " + lowerBound + ", upper bond = " + upperBound + ")");
         Scanner sc = new Scanner(System.in);
         System.out.println("Input number: ");
@@ -17,9 +17,9 @@ public class Bounds {
             if ((inputDouble > upperBound) || (inputDouble < lowerBound)) {
                 System.out.print("Incorrect! Input another number: ");
                 continue;
-            }
-            if ((inputDouble < upperBound) && (inputDouble > lowerBound)) {
-                return inputDouble;
+            } else {
+                System.out.println(inputDouble);
+                break;
             }
         }
     }
