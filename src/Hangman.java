@@ -20,26 +20,29 @@ public class Hangman {
             } else {
                 if (attempts == 0) {
                     player lost;
-                    attempts--;
                 }
+                attempts--;
             }
         }
     }
 
     /**
-     * Display defined word
-     *
+     * Display defined word with opened letters if user has already guessed them
+     * @param word
+     * @param opened
      *
      */
 
-    public static void displayWord() {
+    public static void displayWord(int[] opened, String word) {
 
     }
 
     /**
      * Mark all chars which are opened in the word
+     * @param opened
+     * @param word
      */
-    public static void markChars(int[] opened, ) {
+    public static void markOpenedChars(int[] opened, String word) {
 
     }
 
@@ -51,5 +54,4 @@ public class Hangman {
     public static boolean gameIsOver(int[] opened) {
 
     }
-
 }
