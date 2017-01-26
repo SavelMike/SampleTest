@@ -15,9 +15,10 @@ public class Hangman {
             Scanner sc = new Scanner(System.in);
             System.out.println("Input your letter, please: ");
             String l = sc.next();
-            if ( /* char is in word */) {
-               /* mark all those chars in the word as open */
+            if (/* call method markOpenedChars(), return true if user guessed and false if opposite */) {
+               continue;
             } else {
+                /* If attempts equal 0, player lost. if not attempts minus 1; */
                 if (attempts == 0) {
                     player lost;
                 }
@@ -42,7 +43,7 @@ public class Hangman {
      * @param opened
      * @param word
      */
-    public static void markOpenedChars(int[] opened, String word) {
+    public static boolean markOpenedChars(int[] opened, String word) {
 
     }
 
